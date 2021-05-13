@@ -1,4 +1,4 @@
-# beer
+# vue-admin-system
 
 ## Project setup
 ```
