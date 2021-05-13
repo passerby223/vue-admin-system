@@ -112,7 +112,13 @@
             />
           </div>
         </a-popover>
-        <a-icon v-if="col.search.value" @click="(e) => onCloseClick(e, col)" class="close" type="close-circle" theme="filled" />
+        <a-icon
+          v-if="col.search.value"
+          @click="(e) => onCloseClick(e, col)"
+          class="close"
+          type="close-circle"
+          theme="filled"
+        />
       </div>
     </div>
   </div>

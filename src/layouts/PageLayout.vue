@@ -97,11 +97,14 @@ export default {
     ...mapMutations('setting', ['correctPageMinHeight']),
     getRouteBreadcrumb() {
       let routes = this.$route.matched
+      const path = this.$route.path
       let breadcrumb = []
-      routes.forEach((route) => {
-        const path = route.path.length === 0 ? '/home' : route.path
-        breadcrumb.push(this.$t(getI18nKey(path)))
-      })
+      routes
+        .filter((item) => path.includes(item.path))
+        .forEach((route) => {
+          const path = route.path.length === 0 ? '/home' : route.path
+          breadcrumb.push(this.$t(getI18nKey(path)))
+        })
       let pageTitle = this.page && this.page.title
       if (this.customTitle || pageTitle) {
         breadcrumb[breadcrumb.length - 1] = this.customTitle || pageTitle

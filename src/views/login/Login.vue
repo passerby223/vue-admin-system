@@ -56,7 +56,13 @@
               </a-input>
             </a-form-model-item>
             <a-form-model-item prop="password">
-              <a-input-password allowClear size="large" placeholder="密码" v-model="registerForm.password" type="password">
+              <a-input-password
+                allowClear
+                size="large"
+                placeholder="密码"
+                v-model="registerForm.password"
+                type="password"
+              >
                 <a-icon slot="prefix" type="lock" />
               </a-input-password>
             </a-form-model-item>
@@ -87,10 +93,9 @@
 
 <script>
 import CommonLayout from '@/layouts/CommonLayout'
-import { getUserProfile, userLogin, userRegister } from '@/apis/user'
+import { getUserProfile, userLogin, userRegister } from '@/services/user'
 import { setToken, setUserId } from '@/utils/auth'
 import { mapMutations } from 'vuex'
-
 export default {
   name: 'Login',
   components: { CommonLayout },
@@ -263,7 +268,6 @@ export default {
       vertical-align: middle;
       cursor: pointer;
       transition: color 0.3s;
-
       &:hover {
         color: @primary-color;
       }

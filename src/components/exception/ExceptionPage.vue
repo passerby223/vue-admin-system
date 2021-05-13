@@ -42,13 +42,16 @@ export default {
   justify-content: center;
   align-items: center;
   background-color: @base-bg-color;
+
   .img {
     padding-right: 52px;
     zoom: 1;
+
     img {
       max-width: 430px;
     }
   }
+
   .content {
     h1 {
       color: #434e59;
@@ -57,6 +60,7 @@ export default {
       line-height: 72px;
       margin-bottom: 24px;
     }
+
     .desc {
       color: @text-color-second;
       font-size: 20px;

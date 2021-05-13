@@ -4,7 +4,8 @@
  * @param route
  * @returns {Permission}
  */
-const getRoutePermission = (permissions, route) => permissions.find((item) => item.id === route.meta.authority.permission)
+const getRoutePermission = (permissions, route) =>
+  permissions.find((item) => item.id === route.meta.authority.permission)
 /**
  * 获取路由需要的角色
  * @param roles

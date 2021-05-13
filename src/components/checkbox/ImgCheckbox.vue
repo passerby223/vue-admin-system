@@ -115,7 +115,8 @@ export default {
   created() {
     const groupContext = this.groupContext
     if (groupContext) {
-      this.sChecked = groupContext.defaultValues.length > 0 ? groupContext.defaultValues.indexOf(this.value) >= 0 : this.sChecked
+      this.sChecked =
+        groupContext.defaultValues.length > 0 ? groupContext.defaultValues.indexOf(this.value) >= 0 : this.sChecked
       groupContext.options.push(this)
     }
   },

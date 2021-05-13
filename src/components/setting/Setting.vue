@@ -117,7 +117,9 @@
             size="small"
             slot="actions"
           >
-            <a-select-option :key="index" :value="item.name" v-for="(item, index) in animates">{{ item.alias }}</a-select-option>
+            <a-select-option :key="index" :value="item.name" v-for="(item, index) in animates"
+              >{{ item.alias }}
+            </a-select-option>
           </a-select>
         </a-list-item>
         <a-list-item>
@@ -142,9 +144,15 @@
       :message="$t('alert')"
     >
     </a-alert>
-    <a-button v-if="isDev" id="copyBtn" :data-clipboard-text="copyConfig" @click="copyCode" style="width: 100%" icon="copy">{{
-      $t('copy')
-    }}</a-button>
+    <a-button
+      v-if="isDev"
+      id="copyBtn"
+      :data-clipboard-text="copyConfig"
+      @click="copyCode"
+      style="width: 100%"
+      icon="copy"
+      >{{ $t('copy') }}
+    </a-button>
   </div>
 </template>
 
@@ -268,9 +276,11 @@ export default {
   line-height: 1.5;
   word-wrap: break-word;
   position: relative;
+
   .flex {
     display: flex;
   }
+
   .select-item {
     width: 80px;
   }

@@ -22,7 +22,7 @@ export default {
     animate: {
       type: String,
       validator(value) {
-        return animates.findIndex((item) => item.name == value) !== -1
+        return animates.findIndex((item) => item.name === value) !== -1
       },
       default: 'bounce'
     },

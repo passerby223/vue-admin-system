@@ -3,6 +3,7 @@ import { ADMIN } from '@/config/default'
 import { formatFullPath } from '@/utils/i18n'
 import { filterMenu } from '@/utils/authority-utils'
 import { getLocalSetting } from '@/utils/themeUtil'
+import deepClone from 'lodash.clonedeep'
 
 const localSetting = getLocalSetting(true)
 const customTitlesStr = sessionStorage.getItem(process.env.VUE_APP_TBAS_TITLES_KEY)
@@ -25,12 +26,12 @@ export default {
     menuData(state, getters, rootState) {
       if (state.filterMenu) {
         const { permissions, roles } = rootState.account
-        return filterMenu(state.menuData, permissions, roles)
+        return filterMenu(deepClone(state.menuData), permissions, roles)
       }
       return state.menuData
     },
-    firstMenu(state) {
-      const { menuData } = state
+    firstMenu(state, getters) {
+      const { menuData } = getters
       if (menuData.length > 0 && !menuData[0].fullPath) {
         formatFullPath(menuData)
       }

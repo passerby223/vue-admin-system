@@ -1,7 +1,13 @@
 <template>
   <a-layout :class="['admin-layout', 'beauty-scroll']">
     <drawer v-if="isMobile" v-model="drawerOpen">
-      <side-menu :theme="theme.mode" :menuData="menuData" :collapsed="false" :collapsible="false" @menuSelect="onMenuSelect" />
+      <side-menu
+        :theme="theme.mode"
+        :menuData="menuData"
+        :collapsed="false"
+        :collapsible="false"
+        @menuSelect="onMenuSelect"
+      />
     </drawer>
     <side-menu
       :class="[fixedSideBar ? 'fixed-side' : '']"
@@ -39,20 +45,26 @@
           <slot></slot>
         </div>
       </a-layout-content>
+      <a-layout-footer style="padding: 0">
+        <page-footer :link-list="footerLinks" :copyright="copyright" />
+      </a-layout-footer>
     </a-layout>
   </a-layout>
 </template>
 
 <script>
 import AdminHeader from './header/AdminHeader'
+import PageFooter from './footer/PageFooter'
 import Drawer from '../components/tool/Drawer'
 import SideMenu from '../components/menu/SideMenu'
 import Setting from '../components/setting/Setting'
 import { mapState, mapMutations, mapGetters } from 'vuex'
 
+// const minHeight = window.innerHeight - 64 - 122
+
 export default {
   name: 'AdminLayout',
-  components: { Setting, SideMenu, Drawer, AdminHeader },
+  components: { Setting, SideMenu, Drawer, PageFooter, AdminHeader },
   data() {
     return {
       minHeight: window.innerHeight - 64 - 122,
@@ -84,6 +96,8 @@ export default {
       'isMobile',
       'theme',
       'layout',
+      'footerLinks',
+      'copyright',
       'fixedHeader',
       'fixedSideBar',
       'fixedTabs',
@@ -95,7 +109,8 @@ export default {
       return this.collapsed ? '80px' : '256px'
     },
     headerStyle() {
-      let width = this.fixedHeader && this.layout !== 'head' && !this.isMobile ? `calc(100% - ${this.sideMenuWidth})` : '100%'
+      let width =
+        this.fixedHeader && this.layout !== 'head' && !this.isMobile ? `calc(100% - ${this.sideMenuWidth})` : '100%'
       let position = this.fixedHeader ? 'fixed' : 'static'
       return `width: ${width}; position: ${position};`
     },

@@ -20,6 +20,7 @@
 <script>
 import IMenu from './menu'
 import { mapState } from 'vuex'
+
 export default {
   name: 'SideMenu',
   components: { IMenu },

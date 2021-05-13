@@ -55,6 +55,7 @@ export default {
 <style scoped lang="less">
 .bar {
   position: relative;
+
   .chart {
   }
 }

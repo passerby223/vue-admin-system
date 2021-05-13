@@ -12,6 +12,11 @@ const routerMap = {
     path: '/login',
     component: () => import('@/views/login')
   },
+  demo: {
+    name: '演示页',
+    renderMenu: false,
+    component: () => import('@/views/demo')
+  },
   exp403: {
     authority: '*',
     name: 'exp403',

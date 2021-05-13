@@ -44,7 +44,10 @@
         <template :slot="slot" v-for="slot in slots">
           <slot :name="slot"></slot>
         </template>
-        <template slot-scope="record, index, indent, expanded" :slot="$scopedSlots.expandedRowRender ? 'expandedRowRender' : ''">
+        <template
+          slot-scope="record, index, indent, expanded"
+          :slot="$scopedSlots.expandedRowRender ? 'expandedRowRender' : ''"
+        >
           <slot
             v-bind="{ record, index, indent, expanded }"
             :name="$scopedSlots.expandedRowRender ? 'expandedRowRender' : ''"
@@ -79,7 +82,7 @@ export default {
     indentSize: Number,
     loading: Boolean,
     locale: Object,
-    pagination: Object,
+    pagination: [Object, Boolean],
     rowClassName: Function,
     rowKey: [String, Function],
     rowSelection: Object,

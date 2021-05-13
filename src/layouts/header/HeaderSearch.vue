@@ -55,7 +55,7 @@ export default {
       box-shadow: 0 0 0 0;
     }
     &.leave {
-      width: 0;
+      width: 0px;
       input {
         display: none;
       }

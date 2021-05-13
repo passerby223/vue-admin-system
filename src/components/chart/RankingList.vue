@@ -21,19 +21,24 @@ export default {
 <style lang="less" scoped>
 .rank {
   padding: 0 32px 32px 72px;
+
   .title {
   }
+
   .list {
     margin: 25px 0 0;
     padding: 0;
     list-style: none;
+
     li {
       margin-top: 16px;
+
       span {
         color: @text-color-second;
         font-size: 14px;
         line-height: 22px;
       }
+
       span:first-child {
         background-color: @layout-bg-color;
         border-radius: 20px;
@@ -46,10 +51,12 @@ export default {
         width: 20px;
         text-align: center;
       }
+
       span.active {
         background-color: #314659 !important;
         color: @text-color-inverse !important;
       }
+
       span:last-child {
         float: right;
       }

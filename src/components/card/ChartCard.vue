@@ -35,6 +35,7 @@ export default {
   overflow: hidden;
   width: 100%;
 }
+
 .chart-card-header .meta {
   position: relative;
   overflow: hidden;
@@ -43,12 +44,14 @@ export default {
   font-size: 14px;
   line-height: 22px;
 }
+
 .chart-card-action {
   cursor: pointer;
   position: absolute;
   top: 0;
   right: 0;
 }
+
 .total {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -60,17 +63,20 @@ export default {
   line-height: 38px;
   height: 38px;
 }
+
 .chart-card-footer {
   border-top: 1px solid @border-color-base;
   padding-top: 9px;
   margin-top: 8px;
 }
+
 .chart-card-content {
   margin-bottom: 12px;
   position: relative;
   height: 46px;
   width: 100%;
 }
+
 .chart-card-content .content-fix {
   position: absolute;
   left: 0;

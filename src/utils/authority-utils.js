@@ -11,7 +11,10 @@ function hasPermission(authority, permissions) {
   } else if (typeof authority === 'object') {
     required = authority.permission
   }
-  return required === '*' || (permissions && permissions.findIndex((item) => item === required || item.id === required) !== -1)
+  return (
+    required === '*' ||
+    (permissions && permissions.findIndex((item) => item === required || item.id === required) !== -1)
+  )
 }
 
 /**

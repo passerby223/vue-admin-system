@@ -52,7 +52,9 @@ export default {
   },
   methods: {
     caulateRate() {
-      return (this.percent === null ? (Math.abs(this.value - this.target) * 100) / this.target : this.percent).toFixed(this.scale)
+      return (this.percent === null ? (Math.abs(this.value - this.target) * 100) / this.target : this.percent).toFixed(
+        this.scale
+      )
     },
     caulateTrend() {
       let isIncrease = this.isIncrease === null ? this.value >= this.target : this.isIncrease
@@ -66,11 +68,14 @@ export default {
 .chart-trend {
   display: inline-block;
   font-size: 14px;
+
   .chart-trend-icon {
     font-size: 12px;
+
     &.up {
       color: @red-6;
     }
+
     &.down {
       color: @green-6;
     }

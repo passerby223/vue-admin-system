@@ -55,10 +55,13 @@ export default {
   background-color: @background-color-light;
   border-radius: 6px;
   border: 1px solid @shadow-color;
+
   .task-head {
     margin-bottom: 8px;
+
     .title {
       display: inline-block;
+
       span {
         display: inline-block;
         border-radius: 10px;
@@ -68,11 +71,13 @@ export default {
         background-color: @base-bg-color;
       }
     }
+
     .actions {
       display: inline-block;
       float: right;
       font-size: 18px;
       font-weight: bold;
+
       i {
         cursor: pointer;
       }
